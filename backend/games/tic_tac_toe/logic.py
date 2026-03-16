@@ -1,9 +1,14 @@
 def new_board():
     board = ['', '', '', '', '', '', '', '', '']
+    print(board)
 
 def apply_move(board, player, location):
     #make sure the move is valid
-
+    if board[location] != '':
+        print("You cannot make a move there")
+    if board[location] == '':
+        print(f'{player} is making a move at location: {location}')
+        
     #apply the player's move to the location
 
     #update the board
@@ -16,7 +21,7 @@ def check_winner(board):
     #if a player has won, return the winner
 
     #if no player has won, do nothing
-    
+
     return
 
 def check_tie(board):
@@ -32,3 +37,7 @@ def next_player(player):
     #switch to the other player
 
     return 
+
+board = ['X', '', '', '', '', '', '', '', '']
+players = ["P1", "P2"]
+apply_move(board, "p1", 0)
