@@ -1,19 +1,22 @@
 def new_board():
     board = ['', '', '', '', '', '', '', '', '']
-    print(board)
+    return board
 
 def apply_move(board, player, location):
     #make sure the move is valid
     if board[location] != '':
-        print("You cannot make a move there")
-    if board[location] == '':
-        print(f'{player} is making a move at location: {location}')
-        
+        raise ValueError("That location is alreay occupied")
+
     #apply the player's move to the location
+    if board[location] == '':
+        if player == "P1":
+            symbol = "X"
+        else:
+            symbol = "O"
+        board[location] = symbol
 
     #update the board
-
-    return
+    return board
 
 def check_winner(board):
     #see if the winning conditions have been met
@@ -38,6 +41,7 @@ def next_player(player):
 
     return 
 
-board = ['X', '', '', '', '', '', '', '', '']
+board = ['', '', '', '', '', '', '', '', '']
 players = ["P1", "P2"]
-apply_move(board, "p1", 0)
+apply_move(board, "P1", 0)
+apply_move(board, "P2", 1)
