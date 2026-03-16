@@ -3,20 +3,20 @@ def new_board():
     return board
 
 def apply_move(board, player, location):
+    new_board = board.copy()
     #make sure the move is valid
-    if board[location] != '':
+    if new_board[location] != '':
         raise ValueError("That location is alreay occupied")
 
     #apply the player's move to the location
-    if board[location] == '':
-        if player == "P1":
-            symbol = "X"
-        else:
-            symbol = "O"
-        board[location] = symbol
+    if player == "P1":
+        symbol = "X"
+    else:
+        symbol = "O"
+    new_board[location] = symbol
 
     #update the board
-    return board
+    return new_board
 
 def check_winner(board):
     #see if the winning conditions have been met
