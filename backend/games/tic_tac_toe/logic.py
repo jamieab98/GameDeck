@@ -18,22 +18,17 @@ def apply_move(board, player, location):
 def check_winner(board):
     winner_situations = [(0,1,2), (3,4,5), (6,7,8), (0,3,6), (1,4,7), (2,5,8), (0,4,8), (2,4,6)]
     for situation in winner_situations:
-        check = []
-        for position in situation:
-            check.append(board[position])
-
-        if check[0] == check[1] == check[2] and check[0] != '':
-            print("Game over")
-            return {'Winner': check[0]}
-            
+        a,b,c = situation
+        if board[a] == board[b] == board[c] and board[a] != '':
+            return {'Winner': board[a]}
     return {'Winner': None}
 
 def check_tie(board):
-    #see if the board has been filled with no winning conditions
-
-    #if a game is a tie, return that the game is a tie
-
-    return
+    if '' not in board:
+        return {'Winner': 'Nobody. It is a tie'}
+    
+    else:
+        return {'Winner': None}
 
 def next_player(player):
     #check who just took a valid turn
@@ -42,6 +37,5 @@ def next_player(player):
 
     return 
 
-board = ['X', 'X', 'X', '', '', '', '', '', '']
-
-check_winner(board)
+board = ['X', 'O', 'X', 'O', 'O', 'X', 'O', 'X', 'X']
+check_tie(board)
