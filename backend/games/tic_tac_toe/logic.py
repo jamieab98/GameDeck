@@ -20,22 +20,18 @@ def check_winner(board):
     for situation in winner_situations:
         a,b,c = situation
         if board[a] == board[b] == board[c] and board[a] != '':
-            return {'Winner': board[a]}
-    return {'Winner': None}
+            return board[a]
+    return None
 
 def check_tie(board):
     if '' not in board:
-        return {'Winner': 'Nobody. It is a tie'}
+        return 'Nobody. It is a tie'
     
     else:
-        return {'Winner': None}
+        return None
 
 def next_player(player):
-    #check who just took a valid turn
-    
-    #switch to the other player
-
-    return 
-
-board = ['X', 'O', 'X', 'O', 'O', 'X', 'O', 'X', 'X']
-check_tie(board)
+    if player == "P1":
+        return 'P2'
+    else:
+        return 'P1'
