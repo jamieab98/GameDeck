@@ -45,5 +45,3 @@ def next_turn(current_player, p1, p2):
             return p2
         elif current_player['player'] == 'P2':
             return p1
-    
-print(next_turn(current_player, p1, p2))
