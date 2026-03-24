@@ -16,6 +16,8 @@ def draw_card(current_deck, player_hand):
 def check_end(player_hand):
     if len(player_hand) != len(set(player_hand)):
         print("Player has a duplicate card. This player is out for the round")
-        return(player_hand)
+        return False
     else:
         print("Player may continue")
+        return None
+
