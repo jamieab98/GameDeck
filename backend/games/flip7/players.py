@@ -6,7 +6,8 @@ players = [
      "NumberCards": 0,
      "Active": True,
      "Lives": 0,
-     "Turn": True},
+     "Turn": False,
+     "Position": 1},
     {"Name": "Bobby",
      "Points": 0,
      "RoundPoints": 0,
@@ -14,7 +15,8 @@ players = [
      "NumberCards": 0,
      "Active": True,
      "Lives": 0,
-     "Turn": False},
+     "Turn": False,
+     "Position": 2},
     {"Name": "Micahel",
      "Points": 0,
      "RoundPoints": 0,
@@ -22,7 +24,8 @@ players = [
      "NumberCards": 0,
      "Active": True,
      "Lives": 0,
-     "Turn": False},
+     "Turn": False,
+     "Position": 3},
     {"Name": "Labby",
      "Points": 0,
      "RoundPoints": 0,
@@ -30,5 +33,6 @@ players = [
      "NumberCards": 0,
      "Active": True,
      "Lives": 0,
-     "Turn": False}
+     "Turn": False,
+     "Position": 4}
 ]

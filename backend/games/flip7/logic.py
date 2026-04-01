@@ -13,8 +13,21 @@ def FlipCard(CurrentDeck, CurrentPlayers):
     PlayingPlayer["Hand"].append(PulledCard)
     return
 
-def NextPlayer(CurrentPlayers):
-    
+def ChangePlayers(CurrentPlayers):
+    NumberOfPlayers = len(CurrentPlayers)
+    RecentPlayer = [player for player in CurrentPlayers if player["Turn"]][0]
+    RecentPlayerPosition = RecentPlayer["Position"]
+    i = 0
+    while i < NumberOfPlayers:
+        j = i + RecentPlayerPosition
+        if j >= NumberOfPlayers:
+            j -= 4
+        if CurrentPlayers[j]["Active"] == True:
+            RecentPlayer["Turn"] = False
+            CurrentPlayers[j]["Turn"] = True
+            NextPlayer = CurrentPlayers[j]
+            return
+        i += 1
     return
 
 def CheckDup():
@@ -33,4 +46,4 @@ def Stop():
     return
 
 #FlipCard(CurrentDeck, CurrentPlayers)
-NextPlayer(CurrentPlayers)
+ChangePlayers(CurrentPlayers)
